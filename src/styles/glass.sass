@@ -1,0 +1,41 @@
+$bg: rgba(0,0,0,0.5)
+$line: 1px solid rgba(255, 255, 255, 0.198)    
+$br: 8px
+@mixin glass 
+    background: $bg
+    backdrop-filter: blur(10px)
+
+
+.search 
+    border: $line
+    border-radius: $br
+    margin: 10px !important
+    color: #fff
+    font-size: 2.5em
+    outline: none
+    height: 5vh
+    padding: 0 10px
+    width: 50vw
+    background: $bg
+    letter-spacing: 2.5px 
+    &::placeholder 
+        color: rgba(255, 255, 255, 0.2)
+
+.search-container 
+    display: flex
+    @include glass
+    border-top-left-radius: $br
+    border-top-right-radius: $br
+    border-bottom: $line
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    height: auto
+    width: auto
+.result
+    height: 50vh
+    border-bottom-right-radius: $br
+    border-bottom-left-radius: $br
+    width: 100%
+    @include glass
+

@@ -1,0 +1,15 @@
+{
+    "version": "1.0",
+    "manifest_version": 3,
+    "name": "3l3g4nc3",
+    "description": "An 3l3g4nt startpage.",
+    "chrome_url_overrides": {
+        "newtab": "index.html"
+    },
+    "web_accessible_resources": [
+        {
+            "resources": ["default.png"],
+            "matches": ["<all_urls>"]
+        }
+    ]
+}

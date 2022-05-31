@@ -1,0 +1,20 @@
+{
+  "name": "3l3g4nc3",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "build:dev": "tsc && vite build --watch"
+  },
+  "devDependencies": {
+    "@crxjs/vite-plugin": "^1.0.6",
+    "sass": "^1.52.1",
+    "typescript": "^4.5.4",
+    "vite": "^2.9.9"
+  },
+  "dependencies": {
+    "fast-average-color": "^7.1.0"
+  }
+}
