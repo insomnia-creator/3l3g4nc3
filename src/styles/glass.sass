@@ -3,23 +3,40 @@ $line: 1px solid rgba(255, 255, 255, 0.198)
 $br: 8px
 @mixin glass 
     background: $bg
-    backdrop-filter: blur(10px)
-
+    backdrop-filter: blur(8px)
 
 .search 
     border: $line
     border-radius: $br
     margin: 10px !important
     color: #fff
-    font-size: 2.5em
+    font-size: 1.5em 
     outline: none
-    height: 5vh
+    height: 45px
     padding: 0 10px
     width: 50vw
     background: $bg
     letter-spacing: 2.5px 
+    z-index: 2
     &::placeholder 
         color: rgba(255, 255, 255, 0.2)
+        
+
+input 
+    background: $bg
+    border: $line
+    border-radius: 15px
+    color: #fff
+    font-size: 1em
+    outline: none
+    height: 30px
+    padding: 0 10px
+    background: $bg
+    letter-spacing: 2.5px 
+    &::placeholder 
+        color: rgba(255, 255, 255, 0.2) 
+
+
 
 .search-container 
     display: flex
@@ -31,11 +48,45 @@ $br: 8px
     align-items: center
     justify-content: center
     height: auto
-    width: auto
+    width: 100%
+
 .result
     height: 50vh
     border-bottom-right-radius: $br
     border-bottom-left-radius: $br
     width: 100%
     @include glass
+    display: flex
+    flex-direction: column
+    align-items: center
+    font-size: 1.5em
+    color: #fff
+    overflow-y: scroll
+    padding: 10px 0
 
+
+.result-element
+    border-bottom: $line
+    margin-top: 10px
+    font-size: 24px
+    text-align: center
+    color: #fff
+    width: 50%
+    
+.button 
+    background: $bg
+    border: $line
+    border-radius: $br
+    color: #fff
+    padding: 10px 30px
+    font-size: 1.5em
+    transition: all 0.1s ease-in-out
+    &:hover
+        background: rgba(255, 255, 255, 0.2)
+        cursor: pointer
+        transition: all 0.1s ease-in-out
+    &:active
+        background: rgba(255, 255, 255, 0.4)
+        cursor: grabbing
+        transition: all 0.1s ease-in-out
+        

@@ -16,5 +16,5 @@
     "noImplicitReturns": true,
     "skipLibCheck": true
   },
-  "include": ["src", "src/._load.ts"]
+  "include": ["src", "src/._load.ts", "src/scripts/triggers/.todo.ts"]
 }

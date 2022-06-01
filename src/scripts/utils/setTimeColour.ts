@@ -3,7 +3,6 @@ class PredominantColour
     constructor(public blob: Blob){}
 
 
-
     getBitmapImage(){
         return createImageBitmap(this.blob);
     }

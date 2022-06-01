@@ -30,7 +30,6 @@ const storeImage = async (image: Blob) => {
     req2.onerror = function (e) {
         console.error(e);
     }
-    //store the new image
     store.put({ image: image });
 
   };
