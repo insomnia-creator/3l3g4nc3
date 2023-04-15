@@ -10,11 +10,10 @@ const handleTodo = (args: InputTrigger): Response | void => {
 
   const result = document.querySelector('.result')!;
   const action = args.arguments![0].name;
-  console.log(action);
 
-  if(action === 'create'){
+  if (action === 'create') {
     result.innerHTML = '<todo-element show="create-todo"></todo-element>';
-  } else if(action === 'list'){
+  } else if (action === 'list') {
     result.innerHTML = '<todo-element show="todo-list"></todo-element>';
   } else {
     result.innerHTML = 'You can either list or create a todo, run todo list or todo create';

@@ -18,7 +18,7 @@ const setTime = (blob: Blob) => {
 
         timeElement.innerHTML = displayDateBeautifully();
         await timeColour.setColour();
-    }, 100);
+    }, 500);
 }
 
 export default setTime;

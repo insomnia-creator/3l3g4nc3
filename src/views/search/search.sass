@@ -1,0 +1,51 @@
+@import "src/styles/glass.sass"
+.search-list
+  display: flex
+  flex-direction: column
+  align-items: center
+  text-align: center
+  flex: 2
+  width: 100%
+
+
+
+.spacer
+  margin-bottom: 2vh
+
+.preset-button
+  background: $bg
+  border-radius: 25%
+  height: 70px
+  width: 70px
+  color: #fff
+  border: $line
+  font-size: 24px
+  margin: 20px
+  transition: all 0.1s ease-in-out
+  text-decoration: none !important
+  &:hover
+    background: rgba(255, 255, 255, 0.2)
+    cursor: pointer
+    transition: all 0.1s ease-in-out
+  &:active
+    background: rgba(255, 255, 255, 0.4)
+    transition: all 0.1s ease-in-out
+
+.engine-grid
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  place-items: center
+  width: 30vw
+
+.small
+  font-size: 1em !important
+  margin-top: 1vh
+
+#search-name
+  width: 25vw
+
+.spaced
+  letter-spacing: 1.5px
+  margin-top: 1.5vh
+  margin-bottom: 1.5vh
+  width: 40vw

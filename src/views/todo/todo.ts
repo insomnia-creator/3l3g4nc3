@@ -1,4 +1,4 @@
-import { Todo } from "../../scripts/triggers/.todo";
+import { Todo } from "../../scripts/triggers/todo";
 import html from "./todo.html?raw";
 import "./todo.sass";
 class TodoComponent extends HTMLElement {
@@ -98,7 +98,9 @@ class TodoComponent extends HTMLElement {
         if (name === "" || task === "") return;
         this.addTodo({ name, task });
         this.createTodoIsVisible = false;
-        this.todoListIsVisible = true;
+        this.todoListIsVisible = false;
+        const emptyEl = this.querySelector("#empty")!;
+        emptyEl.innerHTML = `<h3>Todo created!</h3>`;
       });
     }
   }

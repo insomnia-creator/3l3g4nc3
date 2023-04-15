@@ -19,8 +19,6 @@ class PredominantColour
         const canvas = document.createElement("canvas");
         const ctx = canvas.getContext("2d")!;
         const image = await this.getBitmapImage();
-
-
         let data;
         let rgb = {
             r: 0,
@@ -31,9 +29,8 @@ class PredominantColour
         let bs = 5;
         ctx.drawImage(image, 0, 0);
         try {
-            data = ctx.getImageData(0, 0, ctx.canvas.height, ctx.canvas.width);
+            data = ctx.getImageData(30 , 10, 100, 100);
         } catch(e) {
-            alert('Your browser does not support getImageData');
             window.close();
             return;
         }
