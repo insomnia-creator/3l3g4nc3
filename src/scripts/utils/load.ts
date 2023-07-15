@@ -11,7 +11,10 @@ const storeImage = async (image: Blob) => {
   let db;
   request.onupgradeneeded = function() {
     const db = request.result;
-    const store = db.createObjectStore("images", { keyPath: "id", autoIncrement: true });
+    const store = db.createObjectStore("images", {
+      keyPath: "id",
+      autoIncrement: true,
+    });
     store.createIndex("image", "image", { unique: false });
 
     store.put({ image: image });
@@ -27,14 +30,12 @@ const storeImage = async (image: Blob) => {
       images.forEach((image) => {
         store.delete(image.id);
       });
-
     };
 
     req2.onerror = function(e) {
       console.error(e);
-    }
+    };
     store.put({ image: image });
-
   };
 
   request.onerror = function(e) {
@@ -43,7 +44,6 @@ const storeImage = async (image: Blob) => {
 
   return db;
 };
-
 
 const getImageFromDatabase = async () => {
   const request = indexedDB.open("wallpaper");
@@ -66,38 +66,41 @@ const getImageFromDatabase = async () => {
   request.onerror = function(e) {
     console.error(e);
   };
-
 };
 
 const useDefaultImage = async () => {
-  const data = (await fetch('/default.png'));
+  const data = await fetch("/default.png");
   const blob = await data.blob();
   setTime(blob);
   const url = URL.createObjectURL(blob);
   changeBackground(url);
-}
+};
 const useFetchedImage = async (fetchedData: Response) => {
   const imageFILE = await fetchedData.blob();
   changeBackground(URL.createObjectURL(imageFILE));
   setTime(imageFILE);
   storeImage(imageFILE);
-  localStorage.setItem('lastImage', Date.now().toString());
-}
+  localStorage.setItem("lastImage", Date.now().toString());
+};
 
 const getImageFromAPI = async () => {
-  let fetchedData = await fetch(
-    "https://source.unsplash.com/random/3840x2160?wallpaper"
-  ).catch(async e => {
+  let urlFetch = await fetch(
+    "https://bing.biturl.top/?resolution=3840&format=json&index=0&mkt=en-GB"
+  ).catch(async (e) => {
     await getImageFromDatabase();
     throw e;
-  }) as Response;
+  });
+
+  let fetchedData = (await fetch((await urlFetch.json()).url).catch(async (e) => {
+    await getImageFromDatabase();
+    throw e;
+  })) as Response;
 
   useFetchedImage(fetchedData);
-
 };
 const getImage = async () => {
   const lastImageDate = localStorage.getItem("lastImage");
-  const lastImageDateObj = new Date(parseInt(lastImageDate ?? '0'));
+  const lastImageDateObj = new Date(parseInt(lastImageDate ?? "0"));
   const now = new Date();
 
   //get the minutes between the two dates
@@ -114,6 +117,5 @@ const getImage = async () => {
   }
   resizeWindowToFitImage();
 };
-
 
 export default getImage;

@@ -1,6 +1,7 @@
 import handleTodo from "./triggers/todo";
 import { Bang } from "./utils/interfaces";
 import handleSearch from "./triggers/search";
+import handlePreferences from "./triggers/preferences";
 export const bangs: Array<Bang> = [
   {
     triggers: ["/todo"],
@@ -54,5 +55,11 @@ export const bangs: Array<Bang> = [
       localStorage.clear();
     },
     clearResultWindow: false
+  },
+  {
+    triggers: ['/prefs', '/preferences', '/settings', '/options'],
+    description: "Change preferences for 3l3g4nc3",
+    action: handlePreferences,
+    clearResultWindow: true
   }
 ];

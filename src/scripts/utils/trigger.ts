@@ -66,12 +66,12 @@ const registerTriggerHandler = () => {
       } else {
         const query = search.innerHTML;
         const result = document.querySelector(".result")!;
-        result.innerHTML = "Search for " + query;
+        result.innerHTML = "Looking up " + query;
         let searchEngines = localStorage.getItem("searchEngines");
         let enginesParsed;
         const searchResults = JSON.parse(localStorage.getItem("searchHistory") ?? "[]");
         searchResults.push(query)
-        localStorage.setItem("searchHistory", JSON.stringify(searchResults));
+        localStorage.setItem("searchHistory", JSON.stringify(searchResults.reverse().splice(0, 5)));
         if (!searchEngines) {
           localStorage.setItem('searchEngines', JSON.stringify(engines));
           enginesParsed = engines;

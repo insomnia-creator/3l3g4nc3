@@ -1,7 +1,7 @@
 import { Todo } from "../../scripts/triggers/todo";
 import html from "./todo.html?raw";
 import "./todo.sass";
-class TodoComponent extends HTMLElement {
+class TodoView extends HTMLElement {
   myTodos: Array<Todo> = [];
 
   addTodo(todo: Todo) {
@@ -105,4 +105,4 @@ class TodoComponent extends HTMLElement {
     }
   }
 }
-window.customElements.define("todo-element", TodoComponent);
+window.customElements.define("todo-element", TodoView);

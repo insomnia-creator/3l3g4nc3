@@ -41,7 +41,6 @@ const getPrediction = (inputs: string[]) => {
       }
     }
   }
-  console.log(predictedBangs, predictedOutputs)
   if (predictedOutputs.length === 0 && predictedBangs.length === 0) {
     return {
       string: "",

@@ -1,7 +1,7 @@
 import { engines } from "../../scripts/utils/trigger";
 import html from "./search.html?raw";
 import "./search.sass";
-class SearchComponent extends HTMLElement {
+class SearchView extends HTMLElement {
   constructor() {
     super();
     this.innerHTML = html;
@@ -93,4 +93,4 @@ class SearchComponent extends HTMLElement {
     });
   }
 }
-window.customElements.define("search-element", SearchComponent);
+window.customElements.define("search-element", SearchView);
