@@ -5,7 +5,7 @@ import setWindowOnLoad from "./scripts/utils/window";
 import registerTriggerHandler from "./scripts/utils/trigger";
 import checkIfFirstLaunch from "./scripts/utils/first-time";
 import registerPredictiveTextHelper from "./scripts/utils/predictive-text";
-import registerBackgroundResizeHandler from "./scripts/utils/background-resize";
+//import registerBackgroundResizeHandler from "./scripts/utils/background-resize";
 
 document.body.onload = async () => {
   if (!window.indexedDB) {
@@ -17,7 +17,7 @@ document.body.onload = async () => {
     window.location.href = `https://google.com/chrome`;
     return;
   } else {
-    registerBackgroundResizeHandler();
+    //registerBackgroundResizeHandler();
     getImage();
     setInputPlaceholder();
     setWindowOnLoad();
